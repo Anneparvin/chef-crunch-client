@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Register = () => {
+const [error, setError] = useState(false);
+const [success, setSuccess] = useState(false);
+const [passwordError, setPasswordError] = useState('');
+const [acceptTerms, setAcceptTerms] = useState(false);
+
+const navigate = useNavigate();
 
     const handleRegister = event => {
         event.preventDefault();
@@ -21,7 +29,55 @@ const Register = () => {
             theme: "colored",
      });
 
+      //Password Error Message
+      if(!/(?=.*[A-Z])/.test(password)){
+        setPasswordError('Please provide atleast one uppercase.');
+        setError(true);
+        return;
+    }
+    if(password.length < 8){
+        setPasswordError('Password should be atleast 8 characters.');
+        setError(true);
+        return;
+    }
+    if(!/(?=.*[!@#$%*])/.test(password)){
+        setPasswordError('Please use atleast 1 special character.');
+        setError(true);
+        return;
+    }
+
+     // create user
+     createUser(email, password)
+     .then(result =>{
+         const user = result.user;
+         console.log(user);
+         setError(false);
+         updateProfile(name, photo);
+         form.reset();
+         setSuccess(true);
+         navigate('/profile')
+     })
+     .catch(error =>{
+         console.error(error.message);
+         setPasswordError(error.message);
+     })
     } 
+
+     // update user
+     const updateProfile = (name, photo) =>{
+        updateUserProfileData(name, photo)
+        .then(() => console.log("Registration Done!"))
+        .catch(error =>{
+            console.error(error.message);
+            setPasswordError(error.message);
+        })
+    }
+
+      // handle terms & conditions
+      const handleTerms = (e) =>{
+        setAcceptTerms(e.target.checked);
+    }
+    
     return (
         <div className="card flex-shrink-0 w-full mx-auto max-w-sm shadow-2xl bg-base-100 py-20 mt-12">
         <h1 className="text-5xl text-center font-bold">Sign Up</h1>
