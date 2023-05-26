@@ -8,36 +8,32 @@ import pic4 from '../../../assets/images/banner/fruit-.jpg';
 const Home = () => {
     return (
         // carousel here
-        <div className="carousel w-full">
-  <div id="slide1" className="carousel-item relative w-full">
-    <img src={pic1} className="w-full" />
-    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide4" className="btn btn-circle">❮</a> 
-      <a href="#slide2" className="btn btn-circle">❯</a>
-    </div>
+       <div>
+        <div className="carousel w-full rounded-lg">
+
+  <div id="item1" className="carousel-item w-full">
+    <img src={pic1} className="w-3/5 sm:w-full h-96 sm:h-full" />
   </div> 
-  <div id="slide2" className="carousel-item relative w-full">
-    <img src={pic2} className="w-full" />
-    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide1" className="btn btn-circle">❮</a> 
-      <a href="#slide3" className="btn btn-circle">❯</a>
-    </div>
+  <div id="item2" className="carousel-item w-full">
+    <img src={pic2} className="w-3/5 sm:w-full h-96 sm:h-full" />
   </div> 
-  <div id="slide3" className="carousel-item relative w-full">
-    <img src={{pic3}} className="w-full" />
-    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide2" className="btn btn-circle">❮</a> 
-      <a href="#slide4" className="btn btn-circle">❯</a>
-    </div>
+  <div id="item3" className="carousel-item w-full">
+    <img src={pic3} className="w-3/5 sm:w-full h-96 sm:h-full" />
   </div> 
-  <div id="slide4" className="carousel-item relative w-full">
-    <img src={pic4} className="w-full" />
-    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide3" className="btn btn-circle">❮</a> 
-      <a href="#slide1" className="btn btn-circle">❯</a>
-    </div>
+  <div id="item4" className="carousel-item w-full">
+    <img src={pic4} className="w-3/5 sm:w-full h-96 sm:h-full" />
   </div>
+ 
+</div> 
+<div className="flex justify-center w-full py-2 gap-2">
+  <a href="#item1" className="btn btn-xs">1</a> 
+  <a href="#item2" className="btn btn-xs">2</a> 
+  <a href="#item3" className="btn btn-xs">3</a> 
+  <a href="#item4" className="btn btn-xs">4</a>
+ 
 </div>
+<div className='text-center'><button className='bg-yellow-800 p-4 btn-wide text-white font-bold rounded-md mb-4'>Chef Introduction</button></div>
+       </div>
     );
 };
 
