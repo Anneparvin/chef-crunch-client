@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import { AuthContext } from '../../Providers/AuthProvider';
+
 
 const Login = () => {
+    const {signIn, googleSignIn, githubSignIn} = useContext(AuthContext);
     const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false);
     const [passwordError, setPasswordError] = useState('');
 
     const navigate = useNavigate();
     const location = useLocation();
-    const form = location.state?.from?.pathname || '/';
+    const from = location.state?.from?.pathname || '/';
 
 
     const handleLogin = event => {
@@ -51,6 +54,7 @@ const Login = () => {
     .then(result => {
         const user = result.user;
         console.log(user);
+        setSuccess(true);
         navigate(from, {replace: true});
     })
     .catch(error => {
@@ -117,6 +121,7 @@ const Login = () => {
                 <input className="btn btn-primary" type="submit" value="Login" />
             </div>
         </form>
+        <p className='text-primary text-sm'>{success}</p>
         <ToastContainer/>
 
         {/* social login */}

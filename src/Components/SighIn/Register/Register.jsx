@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const Register = () => {
+const {createUser, updateUserProfileData} = useContext(AuthContext);
 const [error, setError] = useState(false);
 const [success, setSuccess] = useState(false);
 const [passwordError, setPasswordError] = useState('');
@@ -126,6 +128,7 @@ const navigate = useNavigate();
                         <button className="btn btn-primary" disabled={!acceptTerms}>Register</button>
                         </div>
         </form>
+        <p>{success}</p>
         <ToastContainer />
         <p className='text-center'>Already have an account? 
         <Link className='text-orange-600 font-bold' to="/login">Login</Link> </p>  
