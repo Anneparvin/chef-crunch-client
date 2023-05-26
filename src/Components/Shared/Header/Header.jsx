@@ -5,7 +5,7 @@ import logo1 from '../../../assets/images/banner/logo.jpg';
 const Header = () => {
     return (
       <nav>
-      <div className="navbar bg-orange-500 rounded-lg">
+      <div className="navbar bg-orange-600 rounded-lg">
 <div className="navbar-start">
  <div className="dropdown">
    <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -14,8 +14,8 @@ const Header = () => {
    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
      <li><ActiveLink to='/'>Home</ActiveLink></li>
      <li tabIndex={0}>
-       <ActiveLink to='/featuredjob' id='featuredjob' className="justify-between">
-        
+       <ActiveLink to='/login' id='featuredjob' className="justify-between">
+        Login
        
        </ActiveLink>
      </li>
@@ -27,10 +27,10 @@ const Header = () => {
 </div>
 <div className="navbar-center hidden lg:flex">
  <ul className="menu menu-horizontal px-1">
-   <li><ActiveLink to='/statistics' className='font-bold'>Statistics</ActiveLink></li>
+   <li><ActiveLink to='/' className='font-bold'>Home</ActiveLink></li>
    <li tabIndex={0}>
-     <ActiveLink to='/featuredjob' className='font-bold'>
-       Applied jobs
+     <ActiveLink to='/login' className='font-bold'>
+      LOgin
      </ActiveLink>
      
    </li>

@@ -27,7 +27,7 @@ Chef Recipes page will have the following :
 7. FontAwsome
 8. Firebase
 9. HeroIcons
-10. 
+10.React-Toastify
 11. 
 12. 
 13. 
