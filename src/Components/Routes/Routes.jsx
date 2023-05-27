@@ -7,6 +7,7 @@ import Register from "../SighIn/Register/Register";
 import Profile from "../SighIn/Profile/Profile";
 import ChefRecipies from "../Home/ChefRecipies/ChefRecipies";
 import ChefSection from "../Home/ChefSection/ChefSection";
+import Error from "../error/Error";
 
 const router = createBrowserRouter([
 
@@ -46,7 +47,12 @@ const router = createBrowserRouter([
                 loader: async({params}) => fetch(`https://chef-krunch-server.vercel.app/chefrecipies/${params.recipies}`)
             }
         ]
+           
     },
+    {
+        path: '/*',
+        element: <Error></Error>,  
+}
    
 ]);
 
