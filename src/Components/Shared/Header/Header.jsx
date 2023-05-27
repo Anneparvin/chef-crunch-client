@@ -1,9 +1,10 @@
 import React from 'react';
 import ActiveLink from '../../ActiveLink/ActiveLink';
 import logo1 from '../../../assets/images/banner/logo.jpg';
-import { Link } from '@react-pdf/renderer';
+
 import { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const {user, logOut} = useContext(AuthContext);
@@ -64,7 +65,7 @@ const Header = () => {
             </label>
             <div className="dropdown dropdown-end">
                         <Link to='/profile'>
-                        <div className="w-10 rounded-full mx-2 hover:tooltip hover:tooltip-open hover:tooltip-bottom" data-tip={user?.displayName || 'User Name'}>
+                        <div className="w-10 rounded-full mx-2 hover:tooltip hover:tooltip-open hover:tooltip-bottom" data-tip={user?.displayName || 'Forida Parvin '}>
                             <img className="h-10 rounded-full" src={user?.photoURL ? user.photoURL : "https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg"} alt='dp' />
                         </div>
                         </Link>
