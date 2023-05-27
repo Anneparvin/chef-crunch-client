@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import { AuthContext } from '../../Providers/AuthProvider';
+import CourseTitle from '../../CourseTitle/CourseTitle';
 
 
 const Login = () => {
@@ -9,6 +10,8 @@ const Login = () => {
     const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false);
     const [passwordError, setPasswordError] = useState('');
+    CourseTitle('Login');
+
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -77,7 +80,7 @@ const Login = () => {
 
      //GitHub Sign in
      const handleGithubSignIn = () =>{
-        githubSignIn()
+         githubSignIn()
         .then(result =>{
             const user = result.user;
             console.log(user);

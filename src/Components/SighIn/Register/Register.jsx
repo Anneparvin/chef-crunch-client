@@ -1,7 +1,9 @@
 import React, { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import { AuthContext } from '../../Providers/AuthProvider';
+import CourseTitle from '../../CourseTitle/CourseTitle';
+
 
 const Register = () => {
 const {createUser, updateUserProfileData} = useContext(AuthContext);
@@ -9,6 +11,8 @@ const [error, setError] = useState(false);
 const [success, setSuccess] = useState(false);
 const [passwordError, setPasswordError] = useState('');
 const [acceptTerms, setAcceptTerms] = useState(false);
+CourseTitle('Register');
+
 
 const navigate = useNavigate();
 
