@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { pdfjs } from 'react-pdf';
+
 
 
 const Blog = () => {
@@ -10,10 +10,7 @@ const Blog = () => {
 
     return (
       <div className='max-w-[1440px]  rounded-lg p-4 mb-4'>
-     pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-      'pdfjs-dist/build/pdf.worker.min.js',
-      import.meta.url,
-    ).toString();
+    
           <section>
           <h1 class="text-4xl text-center font-bold underline mt-4 p-4">Blog Question</h1>
         <div className='"grid grid-cols-1 lg:grid-cols-1 gap-4 mt-12 p-4"'>
