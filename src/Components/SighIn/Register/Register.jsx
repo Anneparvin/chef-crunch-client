@@ -123,16 +123,16 @@ const navigate = useNavigate();
                 <input type="password" name='password' placeholder="password" className="input input-bordered" required/>
                 <span>{passwordError}</span>
             </div>
-            <div class="flex items-center ">
-                            <input onClick={handleTerms} id="link-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-                            <label for="link-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I Accept <a href="/home" alt='t&C' class="text-blue-600 dark:text-blue-500 hover:underline">Terms & Conditions</a>.</label>
+            <div className="flex items-center ">
+                            <input onClick={handleTerms} id="link-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+                            <label for="link-checkbox" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I Accept <a href="/home" alt='t&C' className="text-blue-600 dark:text-blue-500 hover:underline">Terms & Conditions</a>.</label>
                         </div>
 
                         <div className="form-control mt-2">
                         <button className="btn btn-primary" disabled={!acceptTerms}>Register</button>
                         </div>
         </form>
-        <p>{success}</p>
+        <p className='text-primary'>{success}</p>
         <ToastContainer />
         <p className='text-center'>Already have an account? 
         <Link className='text-orange-600 font-bold' to="/login">Login</Link> </p>  

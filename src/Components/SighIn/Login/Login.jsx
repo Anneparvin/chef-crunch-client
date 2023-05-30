@@ -24,7 +24,7 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email,password);
-        toast.success('Successfully Login!', {
+        toast('Successfully Login!', {
             position: "top-center",
             autoClose: 5000,
             hideProgressBar: false,

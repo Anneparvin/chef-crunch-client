@@ -6,7 +6,7 @@ import ChefRecipe from './ChefRecipe';
 
 const ChefRecipies = () => {
    const recipies = useLoaderData();
-   console.log(recipies);
+    // console.log(recipies);
 
     CourseTitle('ChefRecipies');
 

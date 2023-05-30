@@ -23,6 +23,9 @@ const Header = () => {
                     <li>
                         <ActiveLink to='/login'>Login</ActiveLink>
                     </li>
+                    <li>
+                        <ActiveLink to='/chefcards'>ChefRecipies</ActiveLink>
+                    </li>
                    
                     <li>
                         <ActiveLink to='/blog'>Blog</ActiveLink>

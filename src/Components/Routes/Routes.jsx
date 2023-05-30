@@ -9,6 +9,8 @@ import ChefRecipies from "../Home/ChefRecipies/ChefRecipies";
 import ChefSection from "../Home/ChefSection/ChefSection";
 import Error from "../error/Error";
 
+
+
 const router = createBrowserRouter([
 
     {
@@ -42,9 +44,9 @@ const router = createBrowserRouter([
                 loader: async() => fetch('https://chef-krunch-server.vercel.app/chefcards')
             },
             {
-                path: '/chefsection/:recipies',
+                path: '/chefsection/:RecipeId',
                 element: <ChefSection></ChefSection>,
-                loader: async({params}) => fetch(`https://chef-krunch-server.vercel.app/chefrecipies/${params.recipies}`)
+                loader: async({params}) => fetch(`https://chef-krunch-server.vercel.app/chefrecipies/${params.RecipeId}`)
             }
         ]
            

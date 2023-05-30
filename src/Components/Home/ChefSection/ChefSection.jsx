@@ -1,20 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ChefSectionRecipe from './ChefSectionRecipe';
 
 
 const ChefSection = () => {
-    const chefsections = useLoaderData();
-    console.log(chefsections);
+    const sections = useLoaderData();
+    console.log(sections);
 
-    const [recipies, setRecipies] = useState([]);
+   
 
     return (
         <div>
             {
-                recipies.map(recipie =><ChefSectionRecipe
-                key = {chefsection.id}
-                recipie = {recipie}
+                sections.length &&
+                sections.map(section =><ChefSectionRecipe
+                key = {section.RecipeId}
+                section = {section}
                 ></ChefSectionRecipe> )
             }
             

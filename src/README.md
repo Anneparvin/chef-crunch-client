@@ -35,6 +35,7 @@ Chef Recipes page will have the following :
 
 
 ## Live Site Link
+https://chef-krunch.web.app
 
 ## Vercel Link
  https://chef-krunch-server.vercel.app

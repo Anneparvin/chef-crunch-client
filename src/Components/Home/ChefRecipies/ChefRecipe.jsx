@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ChefSection from '../ChefSection/ChefSection';
+
 
 const ChefRecipe = (recipie) => {
-    // console.log(recipie.recipie)
-    const {ChefName, ChefPicture, YearsOfExperience, NumbersOfRecipes , Likes, RecipeId, id} = recipie.recipie;
+    //  console.log(recipie.recipie)
+    const {ChefName, ChefPicture, YearsOfExperience, NumbersOfRecipes , Likes, RecipeId} = recipie.recipie;
     
     return (
         <>
@@ -16,7 +16,8 @@ const ChefRecipe = (recipie) => {
     <h2 className="text-2xl font-bold text-center">NumbersOfRecipes: {NumbersOfRecipes}</h2>
     <p className="text-2xl font-bold text-center">YearsOfExperience: {YearsOfExperience}</p>
     <p className="text-2xl font-bold text-center">Likes: {Likes}</p>
-    <div className="card-actions justify-center"><Link to={`/chefsection/${id}`}>
+    {/* <p className="text-2xl font-bold text-center">RecipeId: {RecipeId}</p> */}
+    <div className="card-actions justify-center"><Link to={`/chefsection/${RecipeId}`}>
       <button className="btn btn-primary btn-wide">View Recipies Button</button></Link>
     </div>
   </div>
